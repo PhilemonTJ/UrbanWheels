@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Wheels - Payment</title>
+    <link rel="stylesheet" href="uw_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .booking-container {
+            width: 60%;
+            margin: auto;
+            justify-content: space-evenly;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 10px 10px 20px 5px rgba(4, 9, 30, 0.8);
+        }
+        .booking-header {
+            padding: 20px 0;
+            text-align: left;
+        }
+        .booking-header button{
+            width: 20%;
+            padding: 10px;
+            background-color: transparent;
+            border-color: transparent; /*border-color: transparent transparent red transparent; */
+            color: black;
+            font-size: 25px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .booking-header #book-btn{
+            font-weight: 600;
+            border-color: transparent transparent rgb(255, 0, 0) transparent;
+            border-width: 3px;
+        }
+        .booking-body {
+            padding: 20px;
+            display: flex;
+        }
+        .car-details {
+            width: 300px;
+            padding: 20px;
+            border-right: 1px solid #ccc;
+        }
+        .car-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .car-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        .car-info {
+            color: #6c757d;
+            margin-top: 5px;
+        }
+        .car-price {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .booking-form {
+            width: 30%;
+        }
+        #booking-form{
+            display: flex;
+            gap: 50px;
+            margin-left: 50px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="month"],
+        input[type="date"],
+        input[type="time"],
+        select {
+            width: 100%;
+            padding: 10px;
+            background-color: #eeeeee;
+            border: 1px solid #EEEEEE;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            background-color: #dc3545;
+            color: white;
+            padding: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <section class="protocol">
+        <nav>
+            <a href="uw_home.html">URBAN<span>WHEELS</span></a>
+        </nav>
+        <div class="tagline">
+            RENT . RIDE . ROAM
+        </div>
+        <div class="booking-container">
+            <div class="booking-header">
+                <button id="book-btn">BOOKING</button>
+            </div>
+            <div class="booking-body">
+                <div class="vehicle-card">
+                    <img src="uw_img/rent-bike-6.jpg" alt="Ola s1 pro">
+                    <div class="vehicle-details">
+                        <h3>Ola <br><span>s1 pro</span></h3><br>
+                        <div class="rating-trips">
+                            <span><i class="fa fa-star"></i> 4.03</span>
+                            <span><i class="fa fa-road"></i> 2 trips</span>
+                        </div>
+                        <hr>
+                        <div class="price">₹68/hr</div>
+                    </div>
+                </div>
+                <div class="booking-form">
+                    <form action="/uw_booking" method="post" id="booking-form">
+                        <div class="booking-details">
+                            <div class="form-group">
+                                <label for="pickup-date">Pickup</label>
+                                <input type="date" id="pickup-date" placeholder="DD-MM -YYYY">
+                            </div>
+                            <div class="form-group">
+                                <label for="pickup-time">Pickup Time</label>
+                                <input type="time" id="pickup-time" placeholder="HH:MM">
+                            </div>
+                            <div class="form-group">
+                                <label for="drop-date">Drop</label>
+                                <input type="date" id="drop-date" placeholder="DD-MM-YYYY">
+                            </div>
+                            <div class="form-group">
+                                <label for="drop-time">Drop Time</label>
+                                <input type="time" id="drop-time" placeholder="HH:MM">
+                            </div>
+                        </div>
+                        <div class="card-details">
+                            <div class="form-group">
+                                <label for="card-no">Card Number</label>
+                                <input type="text" id="card-no" placeholder="1234-5678-9012">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-holder">Card Holder</label>
+                                <input type="text" id="card-holder" placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-expiry">Expiry Date</label>
+                                <input type="month" id="card-expiry" placeholder="MM-YYYY">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-cvv">CVV</label>
+                                <input type="text" id="card-cvv" placeholder="123">
+                            </div>
+                        </div>
+                        <!-- <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="number" id="phone" placeholder="Your Phone Number">
+                        </div> -->
+                        <button type="submit">Book Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+
+            fetch('/uw_login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('login-message').textContent = data.message;
+                if (data.success) {
+                    window.location.href = '/';
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+    <script>
+         // JavaScript code
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const pickupDate = document.querySelector('#pickup-date').value;
+            const pickupTime = document.querySelector('#pickup-time').value;
+            const dropDate = document.querySelector('#drop-date').value;
+            const dropTime = document.querySelector('#drop-time').value;
+            const cardNumber = document.querySelector('#card-no').value;
+            const cardHolder = document.querySelector('#card-holder').value;
+            const cardExpiry = document.querySelector('#card-expiry').value;
+            const cardCVV = document.querySelector('#card-cvv').value;
+
+            // Send a POST request to the server
+            fetch('/book', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    pickupDate,
+                    pickupTime,
+                    dropDate,
+                    dropTime,
+                    cardNumber,
+                    cardHolder,
+                    cardExpiry,
+                    cardCVV
+                })
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+        });
+    </script>
+
+</body>
+</html>

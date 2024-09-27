@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Wheels - Home</title>
+    <link rel="stylesheet" href="uw_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <a href="uw_home.html" class="logo">URBAN<span>WHEELS</span></a>
+            <div class="navbar" id="navbar">
+                <div class="menu">
+                    <a href="uw_home.html">HOME</a>
+                    <div class="book-dropdown-container">
+                        <div class="book-dropdown">
+                            <button class="book-dropdown-btn" id="book-dropdown-trigger">BOOK RIDES</button>
+                        </div>
+                        <div class="book-dropdown-content">
+                            <a href="uw_2-wheeler.html">2-wheelers</a>
+                            <a href="uw_4-wheeler.html">4-wheelers</a>
+                        </div>
+                    </div>
+                    <a href="uw_contact.html">CONTACT</a>
+                </div>
+                <div class="enroll" id="before-login" style="display: none;"> <!-- flex or none -->
+                    <a href="/uw_login">LOGIN</a> <!--  /uw_login -->
+                    <a href="/uw_signup">SIGNUP</a> <!--  /uw_signup -->
+                </div>
+                <div class="profile" id="after-login" style="display: none;"> <!-- flex or none -->
+                    <i class="fa fa-user-circle dropdown" id="profile-icon"></i>
+                    <span class="dropdown" id="dropdown-trigger">
+                        <p id="welcome-message"></p>
+                        <div class="dropdown-content" id="dropdown-menu">
+                            <a href="/profile">Profile</a>
+                            <a href="/ride_bookings">Ride Bookings</a>
+                            <a href="/logout"> Logout</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="intro">
+            <div id="home-bike"><img src="uw_img/home-bike.png" alt="home-bike"></div>
+            <div class="text-box">
+                <h1><span id="element"></span> rides<br>in Easy Steps</h1>
+                <p> Get your ride wherever and whenever you need it with your Android and iOS device</p>
+                <img id="app-store" src="uw_img/app-store.png" alt="App store button">
+                <img id="google-play" src="uw_img/google-play-store.png" alt="Google Play store button">
+            </div>
+            <div id="home-car"><img src="uw_img/home-car.png" alt="home-car"></div>
+        </div>
+    </section>
+
+    
+    <section class="search-section" style="margin-top: 10%">
+        <div>
+            <h5>LOCATION</h5>
+            <input type="text" placeholder="Search your location" id="location">
+        </div>
+        <div>
+            <h5>VEHICLE TYPE</h5>
+            <select id="vehicle-type">
+                <option value="2-wheeler">2-Wheeler</option>
+                <option value="4-wheeler">4-Wheeler</option>
+            </select>
+        </div>
+        <div>
+            <h5>PICKUP DATE</h5>
+            <input type="datetime-local" name="" id="">
+        </div>
+        <div>
+            <h5>RETURN DATE</h5>
+            <input type="datetime-local" name="" id="">
+        </div>
+        <div>
+            <button id="search-button">Search</button>
+        </div>
+
+    </section>
+
+    <section class="why-choose-us">
+        <h1>Why Choose Us?</h1>
+        <div class="row">
+            <div class="wcu-pic">
+                <img src="uw_img/why-choose-us1.jpg" alt="">
+            </div>
+            <div class="content">
+                <div class="content-row">
+                    <img src="uw_img/selection.png" alt="">
+                    <span>
+                        <h5>Diverse Selection</h5>
+                        <p>From luxurious cars to sporty bikes, find exactly what you need</p>
+                    </span>
+                </div>
+                <div class="content-row">
+                    <img src="uw_img/customer-service.png" alt="">
+                    <span>
+                        <h5>Customer Support</h5>
+                        <p>24/7 assistance for a seamless experience.</p>
+                    </span>
+                </div>
+                <div class="content-row">
+                    <img src="uw_img/price-tag.png" alt="">
+                    <span>
+                        <h5>Competitive Pricing</h5>
+                        <p>Enjoy the best rates in the market.</p>
+                    </span>
+                </div>
+                <div class="content-row">
+                    <img src="uw_img/booking.png" alt="">
+                    <span>
+                        <h5>Easy Booking</h5>
+                        <p>Simple, user-friendly process from start to finish.</p>
+                    </span>
+                </div>
+                <div class="content-row">
+                    <img src="uw_img/quality.png" alt="">
+                    <span>
+                        <h5>Quality Assurance</h5>
+                        <p>Meticulously maintained and ready for use.</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h1>What our Customers Say</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus qui ex nulla fugit tempora voluptatem
+            itaque aspernatur voluptates tempore. Tempora, vero! Ea a dolore mollitia.</p>
+        <div class="row">
+            <div class="testimonials-col">
+                <img src="uw_img/user1.jpg" alt="user1">
+                <div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi maiores voluptas nulla nostrum
+                        esse aperiam! Labore numquam, nihil nam blanditiis nostrum facere tempora iusto sequi et ipsam
+                        corrupti consectetur libero vel enim adipisci suscipit praesentium laudantium obcaecati iste
+                        perferendis culpa officia. Iure quae iste quia commodi alias consequuntur nam dolorum.</p>
+                    <h3>EMILY CARTER</h3>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+            <div class="testimonials-col">
+                <img src="uw_img/user2.jpg" alt="user2">
+                <div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi maiores voluptas nulla nostrum
+                        esse aperiam! Labore numquam, nihil nam blanditiis nostrum facere tempora iusto sequi et ipsam
+                        corrupti consectetur libero vel enim adipisci suscipit praesentium laudantium obcaecati iste
+                        perferendis culpa officia. Iure quae iste quia commodi alias consequuntur nam dolorum.</p>
+                    <h3>JONATHAN MITCHELL</h3>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+            </div>
+        </div>
+        <div class="row" style=" margin-top: -2.5%; display: flex; justify-content: center;">
+            <div class="testimonials-col">
+                <img src="uw_img/user3.jpg" alt="user3">
+                <div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi maiores voluptas nulla nostrum
+                        esse aperiam! Labore numquam, nihil nam blanditiis nostrum facere tempora iusto sequi et ipsam
+                        corrupti consectetur libero vel enim adipisci suscipit praesentium laudantium obcaecati iste
+                        perferendis culpa officia. Iure quae iste quia commodi alias consequuntur nam dolorum.</p>
+                    <h3>JORDAN PETERSON</h3>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="us">
+            <div class="social-media">
+                <h4>Follow Us On</h4>
+                <div class="icons">
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-linkedin"></i>
+                    <a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a>
+                    <i class="fa fa-twitter"></i>
+                </div>
+            </div>
+            <div class="social-media">
+                <h4>Available in</h4>
+                <div class="icons">
+                    <i class="fa fa-android"></i>
+                    <i class="fa fa-apple"></i>
+                    <i class="fa fa-windows"></i>
+                </div>
+            </div>
+        </div>
+        <div class="web-info">
+            <div>Copyright <i class="fa fa-copyright"></i> Urban Wheels | Privacy Policy</div>
+            <div>Website Developed with <i class="fa fa-heart-o"></i> By Philemon T Joseph 2262242</div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Search', 'Book', 'Rent'],
+            typeSpeed: 100, loop: true
+        });
+    </script>
+    <script>
+        document.addEventListener('click', function(event) {
+            var dropdown = document.getElementById('dropdown-menu');
+            var trigger = document.getElementById('dropdown-trigger');
+            var icon = document.getElementById('profile-icon');
+            
+            if (trigger.contains(event.target) || icon.contains(event.target)) {
+                // Toggle dropdown visibility
+                dropdown.classList.toggle('show');
+            } else {
+                // Close the dropdown if clicked outside
+                dropdown.classList.remove('show');
+            }
+        });
+        
+    </script>
+    <script>
+        // Fetch session details from the server to check if the user is logged in
+        window.onload = function() {
+            fetch('/session-info')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.loggedin) {
+                        // User is logged in, show profile options
+                        document.getElementById('before-login').style.display = 'none';
+                        document.getElementById('after-login').style.display = 'flex';
+                        document.getElementById('welcome-message').textContent = `Welcome, ${data.name}!`;
+
+                        // Show profile menu when the profile icon is clicked
+                        /*document.getElementById('profile-icon').addEventListener('click', function() {
+                            const menu = document.getElementById('profile-menu');
+                            menu.style.display = menu.style.display === 'inline' ? 'none' : 'inline';
+                        });*/
+                    } else {
+                        // User is not logged in, show login/signup options
+                        document.getElementById('before-login').style.display = 'flex';
+                        document.getElementById('after-login').style.display = 'none';
+                        document.getElementById('welcome-message').textContent = '';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        };
+    </script>
+</body>
+</html>

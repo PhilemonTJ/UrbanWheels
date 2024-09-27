@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Wheels - Contact Us</title>
+    <link rel="stylesheet" href="uw_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="uw_home.html" class="logo">URBAN<span>WHEELS</span></a>
+            <div class="navbar" id="navbar">
+                <div class="menu">
+                    <a href="uw_home.html">HOME</a>
+                    <div class="book-dropdown-container">
+                        <div class="book-dropdown">
+                            <button class="book-dropdown-btn" id="book-dropdown-trigger">BOOK RIDES</button>
+                        </div>
+                        <div class="book-dropdown-content">
+                            <a href="uw_2-wheeler.html">2-wheelers</a>
+                            <a href="uw_4-wheeler.html">4-wheelers</a>
+                        </div>
+                    </div>
+                    <a href="uw_contact.html">CONTACT</a>
+                </div>
+                <div class="enroll" id="before-login" style="display: none;"> <!-- flex or none -->
+                    <a href="/uw_login">LOGIN</a> <!--  /uw_login -->
+                    <a href="/uw_signup">SIGNUP</a> <!--  /uw_signup -->
+                </div>
+                <div class="profile" id="after-login" style="display: none;"> <!-- flex or none -->
+                    <i class="fa fa-user-circle dropdown" id="profile-icon"></i>
+                    <span class="dropdown" id="dropdown-trigger">
+                        <p id="welcome-message"></p>
+                        <div class="dropdown-content" id="dropdown-menu">
+                            <a href="/profile">Profile</a>
+                            <a href="/update-profile">Update Profile</a>
+                            <a href="/logout"> Logout</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </nav>
+
+        <h1>CONTACT US</h1>
+    </section>
+
+    <section class="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d9612.11205214374!2d77.47952604890061!3d12.925267198079014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1719766059161!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section class="contact-us">
+        <div class="row">
+            <div class="contact-col">
+                <div>
+                    <i class="fa fa-building"></i>
+                    <span>
+                        <h5>Kengeri Satellite Town, Mysore Road</h5>
+                        <p>Bangalore, Karnataka, IN</p>
+                    </span>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <span>
+                        <h5>+91 12345 67890</h5>
+                        <p>Monday to Saturday, 8AM to 8PM<br>Sunday, 10AM to 5PM</p>
+                    </span>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <span>
+                        <h5>rent@urbanwheels.in</h5>
+                        <p>Email us your query</p>
+                    </span>
+                </div>
+            </div>
+            <div class="contact-col">
+                <form>
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                    <input type="email" name="visitor_email" placeholder="Enter email address" required>
+                    <input type="text" name="subject" placeholder="Enter your subject" required>
+                    <textarea rows="8" name="message" placeholder="Message" required></textarea>
+                    <button type="submit" class="btn black-bg-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section class="footer">
+        <div class="us">
+            <div class="social-media">
+                <h4>Follow Us On</h4>
+                <div class="icons">
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-linkedin"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-twitter"></i>
+                </div>
+            </div>
+            <div class="social-media">
+                <h4>Available in</h4>
+                <div class="icons">
+                    <i class="fa fa-android"></i>
+                    <i class="fa fa-apple"></i>
+                    <i class="fa fa-windows"></i>
+                </div>
+            </div>
+        </div>
+        <div class="web-info">
+            <div>Copyright <i class="fa fa-copyright"></i> Urban Wheels | Privacy Policy</div>
+            <div>Website Developed with <i class="fa fa-heart-o"></i> By Philemon T Joseph 2262242</div>
+        </div>
+
+    </section>
+    <script>
+        document.addEventListener('click', function(event) {
+            var dropdown = document.getElementById('dropdown-menu');
+            var trigger = document.getElementById('dropdown-trigger');
+            var icon = document.getElementById('profile-icon');
+            
+            if (trigger.contains(event.target) || icon.contains(event.target)) {
+                // Toggle dropdown visibility
+                dropdown.classList.toggle('show');
+            } else {
+                // Close the dropdown if clicked outside
+                dropdown.classList.remove('show');
+            }
+        });
+        
+    </script>
+    <script>
+        // Fetch session details from the server to check if the user is logged in
+        window.onload = function() {
+            fetch('/session-info')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.loggedin) {
+                        // User is logged in, show profile options
+                        document.getElementById('before-login').style.display = 'none';
+                        document.getElementById('after-login').style.display = 'flex';
+                        document.getElementById('welcome-message').textContent = `Welcome, ${data.name}!`;
+
+                        // Show profile menu when the profile icon is clicked
+                        /*document.getElementById('profile-icon').addEventListener('click', function() {
+                            const menu = document.getElementById('profile-menu');
+                            menu.style.display = menu.style.display === 'inline' ? 'none' : 'inline';
+                        });*/
+                    } else {
+                        // User is not logged in, show login/signup options
+                        document.getElementById('before-login').style.display = 'flex';
+                        document.getElementById('after-login').style.display = 'none';
+                        document.getElementById('welcome-message').textContent = '';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        };
+    </script>
+
+</body>
+
+</html>

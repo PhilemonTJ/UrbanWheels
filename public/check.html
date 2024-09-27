@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Wheels</title>
+    <link rel="stylesheet" href="check.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">URBAN <span>WHEELS</span></div>
+        <div class="menu">
+            <a href="#"> HOME</a>
+            <a href="#">CONTACT</a>
+        </div>
+        <div class="profile">
+            <i class="fas fa-user-circle" id="profile-icon"></i>
+            <span class="dropdown" id="dropdown-trigger">
+                Welcome, User!
+                <div class="dropdown-content" id="dropdown-menu">
+                    <a href="#">Profile</a>
+                    <a href="#">Update Profile</a>
+                    <a href="uw_home.html"> Logout</a>
+                </div>
+            </span>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('click', function(event) {
+            var dropdown = document.getElementById('dropdown-menu');
+            var trigger = document.getElementById('dropdown-trigger');
+            var icon = document.getElementById('profile-icon');
+            
+            if (trigger.contains(event.target) || icon.contains(event.target)) {
+                // Toggle dropdown visibility
+                dropdown.classList.toggle('show');
+            } else {
+                // Close the dropdown if clicked outside
+                dropdown.classList.remove('show');
+            }
+        });
+        
+    </script>
+</body>
+</html>

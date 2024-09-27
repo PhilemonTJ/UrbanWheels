@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #FFDADA;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .logo span {
+    color: red;
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    position: relative;
+}
+
+.navbar .menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: red;
+    transition: width 0.4s ease;
+}
+
+.navbar .menu a:hover::after {
+    width: 100%;
+    left: 0;
+    background: red;
+}
+
+.navbar .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar .profile i {
+    font-size: 24px;
+}
+
+.navbar .profile .dropdown {
+    position: relative;
+}
+
+.navbar .profile .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #FFB3B3;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .profile .dropdown-content a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 5px 0;
+}
+
+.navbar .profile .dropdown-content.show {
+    display: block;
+}
